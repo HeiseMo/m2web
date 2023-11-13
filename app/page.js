@@ -12,8 +12,8 @@ export default function Home() {
         <Image
           src="/logo.png"
           alt="Logo"
-          width={500} // Set your desired width
-          height={500} // Set your desired height
+          width={300} // Set your desired width
+          height={300} // Set your desired height
         />
       </div>
     <RegistrationForm />

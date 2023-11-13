@@ -109,50 +109,66 @@
 
 
 @media screen and (max-width: 768px) {
-  .registrationContainer {
-    width: 80vw; /* Adjust width for smaller screens */
-    padding: 20px;
+  .main {
+    width: 100vw; /* Full width for smaller screens */
   }
 
-  .title {
-    font-size: 22px; /* Slightly smaller font size */
-    margin-bottom: 15px;
+  .main::before {
+    width: 100vw; /* Ensure background covers full width */
+  }
+
+  .containerBody {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+  .registrationContainer {
+    width: 90vw; /* Increase width for better use of space */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .registrationForm {
+    gap: 15px; /* Reduce gap size */
   }
 
   .formGroup label {
-    font-size: 16px;
+    font-size: 16px; /* Adjust font size for readability */
   }
 
   .formGroup input {
-    font-size: 16px;
-    padding: 10px;
+    font-size: 16px; /* Adjust font size for readability */
+    padding: 10px; /* Adjust padding for better touch interaction */
   }
 
-  .submitButton {
-    padding: 10px 15px;
+  .customButtons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add space between buttons */
+  }
+
+  .submitButton, .downloadButton {
+    width: 100%; /* Full-width buttons for easier interaction */
+    padding: 12px 15px; /* Adjust padding */
+    font-size: 16px; /* Adjust font size for readability */
+    margin: 8px 0; /* Adjust margin for spacing */
   }
 }
 
 @media screen and (max-width: 480px) {
-  .registrationContainer {
-    width: 90vw; /* Even wider on very small screens */
-  }
-
   .title {
-    font-size: 20px;
+    font-size: 18px; /* Further reduce font size */
   }
 
   .formGroup label {
-    font-size: 14px;
+    font-size: 14px; /* Reduce font size for labels */
   }
 
   .formGroup input {
-    font-size: 14px;
-    padding: 8px;
+    font-size: 14px; /* Reduce input font size */
+    padding: 8px; /* Slightly reduce padding */
   }
 
-  .submitButton {
-    font-size: 16px; /* Larger font for readability */
-    padding: 12px 16px; /* Larger tap target */
+  .submitButton, .downloadButton {
+    font-size: 14px; /* Reduce font size */
+    padding: 10px 12px; /* Adjust padding */
   }
 }

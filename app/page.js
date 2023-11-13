@@ -7,17 +7,21 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Home() {
   
   return (
+    <div className={styles.containerBody}>
     <main className={styles.main}>
            <div className={styles.logoContainer}>
         <Image
           src="/logo.png"
           alt="Logo"
-          width={300} // Set your desired width
-          height={300} // Set your desired height
+          width={400} // Set your desired width
+          height={400} // Set your desired height
         />
       </div>
-    <RegistrationForm />
+      </main>
+      <div>
+      <RegistrationForm />
+      </div>
     <ToastContainer />
-    </main>
+    </div>
   )
 }

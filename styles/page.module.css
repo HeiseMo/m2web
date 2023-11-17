@@ -75,7 +75,7 @@
   align-items: center;
 }
 .submitButton {
-  background-color: #e67e22; /* A dark red color for the primary button background */
+  background-color: #21c51b; /* A dark red color for the primary button background #e67e22*/
   color: white; /* White text to stand out against the dark red */
   border: none; /* Removes the default border */
   padding: 10px 20px; /* Adds some padding inside the button */
@@ -86,7 +86,7 @@
   margin: 4px 2px; /* Adds some space around the button */
   cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
   border-radius: 8px; /* Rounds the corners of the button */
-  box-shadow: 0 4px #d35400; /* Adds a darker red shadow to give a depth effect */
+  box-shadow: 0 4px #079202; /* Adds a darker red shadow to give a depth effect #d35400*/
   transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
   width: 10vw;
 }
@@ -106,7 +106,66 @@
   transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
   width: 10vw;
 }
+.loginButton {
+  background-color: #e67e22; /* A dark red color for the primary button background #21c51b*/
+  color: white; /* White text to stand out against the dark red */
+  border: none; /* Removes the default border */
+  padding: 10px 20px; /* Adds some padding inside the button */
+  text-align: center; /* Ensures the text is centered */
+  text-decoration: none; /* Removes any underlines from text */
+  display: inline-block; /* Allows the button to sit inline with other elements */
+  font-size: 16px; /* Sets a standard font size */
+  margin: 4px 2px; /* Adds some space around the button */
+  cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
+  border-radius: 8px; /* Rounds the corners of the button */
+  box-shadow: 0 4px #d35400; /* Adds a darker red shadow to give a depth effect #079202*/
+  transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
+  width: 10vw;
+}
+.containerBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1A202C; /* Dark background for contrast */
+  color: #ffffff; /* White text */
+}
 
+.accountGreeting {
+  font-size: 2rem; /* Large font size for the greeting */
+  margin-bottom: 20px; /* Space above the buttons */
+  text-align: center; /* Center the greeting text */
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for buttons */
+  grid-gap: 20px; /* Space between buttons */
+  padding: 20px;
+  max-width: 600px; /* Maximum width of the container */
+}
+
+.bigSquareButton {
+  background-color: #4A5568; /* A lighter shade for buttons */
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  height: 150px; /* Fixed height for square appearance */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.bigSquareButton:hover {
+  background-color: #2D3748; /* Slightly lighter on hover */
+}
 
 @media screen and (max-width: 768px) {
   .main {
@@ -151,6 +210,14 @@
     font-size: 16px; /* Adjust font size for readability */
     margin: 8px 0; /* Adjust margin for spacing */
   }
+  .buttonContainer {
+    grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+    max-width: 300px; /* Adjust max width for smaller screens */
+  }
+
+  .bigSquareButton {
+    height: 120px; /* Adjust button size for smaller screens */
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -170,5 +237,15 @@
   .submitButton, .downloadButton {
     font-size: 14px; /* Reduce font size */
     padding: 10px 12px; /* Adjust padding */
+  }
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .bigSquareButton {
+    width: 120px;
+    height: 120px;
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }

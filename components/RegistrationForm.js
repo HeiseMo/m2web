@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import styles from '../app/page.module.css'; // Update the path as needed
+import styles from '../styles/page.module.css'; // Update the path as needed
 import { toast } from 'react-toastify';
 
 export default function RegistrationForm() {

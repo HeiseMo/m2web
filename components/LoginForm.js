@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react';
-import styles from '../styles/page.module.css'; // Update the path as needed
 import { toast } from 'react-toastify';
 
 export default function LoginForm() {
@@ -52,18 +51,18 @@ export default function LoginForm() {
   };
 
   return (
-    <div className={styles.registrationContainer}>
-      <form className={styles.registrationForm} onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
+    <div className="registrationContainer">
+      <form className="registrationForm" onSubmit={handleSubmit}>
+        <div className="formGroup">
           <label htmlFor="username">Username</label>
           <input type="text" id="username" name="username" required value={username} onChange={handleUsernameChange} />
         </div>
-        <div className={styles.formGroup}>
+        <div className="formGroup">
           <label htmlFor="password">Password</label>
           <input type="password" id="password" name="password" required value={password} onChange={handlePasswordChange} />
         </div>
-        <div className={styles.customButtons}>
-          <button type="submit" className={styles.submitButton}>Login</button>
+        <div className="customButtons">
+          <button type="submit" className="submitButton">Login</button>
         </div>
       </form>
     </div>

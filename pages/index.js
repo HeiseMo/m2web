@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import styles from '../styles/page.module.css';
 import "./styles.css";
 import RegistrationForm from '../components/RegistrationForm';
 import LoginForm from '../components/LoginForm';
@@ -27,9 +26,9 @@ export default function Home({ token }) {
   };
 
   return (
-    <div className={styles.containerBody}>
-      <main className={styles.main}>
-        <div className={styles.logoContainer}>
+    <div className="containerBody">
+      <main className="main">
+        <div className="logoContainer">
           <Image
             src="/logo.png"
             alt="Logo"
@@ -37,10 +36,10 @@ export default function Home({ token }) {
             height={400}
           />
         </div>
-        <div className={styles.formGroup}>
+        <div className="formGroup">
           <button 
             type="submit" 
-            className={styles.loginButton}
+            className="loginButton"
             onClick={toggleForm}>
             {showLoginForm ? "Register Form" : "Login Page"}
           </button>

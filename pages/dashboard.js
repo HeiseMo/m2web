@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/page.module.css';
 import { useRouter } from 'next/router';
 import "./styles.css";
 
@@ -25,16 +24,16 @@ const Dashboard = () => {
 
 
   return (
-    <div className={styles.containerBody}>
-      <div className={styles.accountGreeting}>
+    <div className="containerBody">
+      <div className="accountGreeting">
           Welcome, {accountName}!
         </div>
         <div>
-        <div className={styles.buttonContainer}>
-        <button className={styles.bigSquareButton}>
+        <div className="buttonContainer">
+        <button className="bigSquareButton">
           Shop
         </button>
-        <button className={styles.bigSquareButton}>
+        <button className="bigSquareButton">
           Account Settings
         </button>
       </div>

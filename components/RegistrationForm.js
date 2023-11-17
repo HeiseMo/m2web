@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react';
-import styles from '../styles/page.module.css'; // Update the path as needed
 import { toast } from 'react-toastify';
 
 export default function RegistrationForm() {
@@ -75,35 +74,35 @@ export default function RegistrationForm() {
     }
 }
   return (
-    <div className={styles.registrationContainer}>
-        <h1 className={styles.title}></h1>
-        <form className={styles.registrationForm} onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
+    <div className="registrationContainer">
+        <h1 className="title"></h1>
+        <form className="registrationForm" onSubmit={handleSubmit}>
+          <div className="formGroup">
             <label htmlFor="username">Username</label>
             <input type="text" id="username" name="username" required value={username} onChange={handleUsernameChange} />
           </div>
-          <div className={styles.formGroup}>
+          <div className="formGroup">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" required value={email} onChange={handleEmailChange} />
           </div>
-          <div className={styles.formGroup}>
+          <div className="formGroup">
         <label htmlFor="delcode">Character Deletion Code</label>
         <input type="number" id="delcode" name="delcode" required value={delcode} onChange={handleDelcodeChange} min="1000000" max="9999999" placeholder="Must be 7 digits, only numbers" />
         </div>
-          <div className={styles.formGroup}>
+          <div className="formGroup">
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" required value={password} onChange={handlePasswordChange} />
           </div>
-          <div className={styles.formGroup}>
+          <div className="formGroup">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required value={confirmPassword} onChange={handleConfirmPasswordChange} />
           </div>
-          <div className={styles.customButtons}>
-          <div className={styles.formGroup}>
-            <button type="submit" className={styles.submitButton}>Register</button>
+          <div className="customButtons">
+          <div className="formGroup">
+            <button type="submit" className="submitButton">Register</button>
           </div>
-          <div className={styles.formGroup}>
-            <a href="https://drive.google.com/file/d/1SFbJw2929oK6CSYaFz3z24E5Uf0yUKiQ/view?usp=sharing" className={styles.downloadButton} target="_blank" rel="noopener noreferrer">Download Client</a>
+          <div className="formGroup">
+            <a href="https://drive.google.com/file/d/1SFbJw2929oK6CSYaFz3z24E5Uf0yUKiQ/view?usp=sharing" className="downloadButton" target="_blank" rel="noopener noreferrer">Download Client</a>
           </div>
           </div>
         </form>

@@ -42,7 +42,7 @@ export default async function handler(req, res) {
       'INSERT INTO player.item_award(login, vnum, count, mall) VALUES (?, ?, ?, ?)',
       [decoded.username, vnum, quantity, 1]
     );
-
+    await pdb.end();
     if (insertResult[0].affectedRows > 0) {
       return res.status(200).json({ message: 'Purchase successful' });
     } else {

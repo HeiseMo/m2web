@@ -413,3 +413,125 @@ input[type="number"] {
   /* existing styles */
   padding: 10px 50px; /* Adjust padding for better spacing */
 }
+
+/* Added to ensure .webshop-page grows to fill available space */
+.webshop-page {
+  flex-grow: 1;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .top-nav {
+    font-size: 1.2em; /* Smaller font size */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  .nav-links {
+    width: auto; /* Adjust width */
+    gap: 10px; /* Add space between buttons */
+  }
+
+  .nav-links button {
+    font-size: 0.8em; /* Adjust button font size */
+    padding: 5px; /* Adjust padding */
+  }
+
+  .search-container {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .search-input {
+    width: 80vw; /* Wider search input */
+    font-size: 1em; /* Adjust font size */
+  }
+
+  .containerBodyShop {
+    padding: 5px; /* Adjust padding */
+    width: 100%; /* Full width */
+  }
+
+  .items-list-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for items */
+    gap: 20px; /* Adjust gap */
+  }
+
+  .item-card {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .item-info {
+    border-top: none; /* Optional: Remove borders */
+    border-bottom: none; /* Optional: Remove borders */
+  }
+
+  .item-footer {
+    flex-direction: column; /* Stack input and button */
+    gap: 10px; /* Add space between input and button */
+  }
+
+  .item-quantity-input,
+  .buy-button {
+    width: 100%; /* Full width for inputs and buttons */
+  }
+
+  .buttonContainer {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+    gap: 15px; /* Space between buttons */
+  }
+
+  .bigSquareButton {
+    width: 90vw; /* Adjust button width */
+    height: 120px; /* Adjust button height */
+    font-size: 1.2rem; /* Adjust font size */
+  }
+
+  .webshop-footer {
+    font-size: 0.8em; /* Adjust footer font size */
+  }
+  .registrationContainer, .loginContainer { /* Assuming you have similar classes for login */
+    width: 80vw; /* Use a higher percentage of the viewport width */
+    padding: 20px; /* Adjust padding */
+    margin-top: 20px; /* Add some margin at the top */
+  }
+
+  .registrationForm, .loginForm { /* Assuming you have similar classes for login */
+    gap: 15px; /* Adjust space between form elements */
+  }
+
+  .formGroup {
+    font-size: 16px; /* Adjust label font size */
+  }
+
+  .formGroup input {
+    font-size: 1em; /* Adjust input font size */
+    padding: 10px; /* Adjust padding for better touch accessibility */
+  }
+
+  .customButtons, .submitButton, .loginButton, .downloadButton {
+    width: 100%; /* Full width for buttons */
+    font-size: 1em; /* Adjust button font size */
+    padding: 12px; /* Increase padding for better touch accessibility */
+  }
+
+  .customButtons button {
+    margin: 5px 0; /* Add margin for vertical spacing between buttons */
+  }
+
+  .accountGreeting {
+    font-size: 1.2em; /* Adjust greeting font size */
+    width: 90%; /* Adjust width */
+    padding: 10px; /* Adjust padding */
+  }
+  .containerBody{
+    flex-direction: column;
+    height: fit-content;
+  }
+  .main::before{
+    background-image: none;
+  }
+  .main{
+    height: fit-content;
+  }
+  /* ... Additional responsive styles as needed ... */
+}

@@ -1,254 +1,415 @@
+
 body {
-    margin: 0;
-  }
-  .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 50vw;
-    color: #f3e9d2;
-    z-index: 1;
-  }
-  
-  .main::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://i.imgur.com/O1VXW3z.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.2;
-    z-index: -1; /* Places the background behind the content */
-    width: 50vw;
-  }
-  
-  .containerBody{
-    display: flex;
-    flex-direction: row;
-    background-color: #111827;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .registrationContainer {
-    height: 55vh;
-    padding: 30px;
-    width: 35vw; /* Slightly narrower for a more elegant look */
-  }
-  
-  .registrationForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Increased gap for a less cluttered look */
-    height: 80%;
-  }
-  
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .formGroup label {
-    margin-bottom: 8px;
-    font-weight: 500;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #ffffff;
-    font-size: 18px; /* Slightly larger for better visibility */
-  }
-  
-  .formGroup input {
-    padding: 12px; /* Increased padding for a more tactile feel */
-    background-color: #ffffffb0;
-    border: none;
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 18px; /* Larger font size for modern aesthetics */
-  }
-  .customButtons{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .submitButton {
-    background-color: #21c51b; /* A dark red color for the primary button background #e67e22*/
-    color: white; /* White text to stand out against the dark red */
-    border: none; /* Removes the default border */
-    padding: 10px 20px; /* Adds some padding inside the button */
-    text-align: center; /* Ensures the text is centered */
-    text-decoration: none; /* Removes any underlines from text */
-    display: inline-block; /* Allows the button to sit inline with other elements */
-    font-size: 16px; /* Sets a standard font size */
-    margin: 4px 2px; /* Adds some space around the button */
-    cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
-    border-radius: 8px; /* Rounds the corners of the button */
-    box-shadow: 0 4px #079202; /* Adds a darker red shadow to give a depth effect #d35400*/
-    transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
-    width: 10vw;
-  }
-  .downloadButton{
-    background-color: #a52a2a; /* A dark red color for the primary button background */
-    color: white; /* White text to stand out against the dark red */
-    border: none; /* Removes the default border */
-    padding: 10px 20px; /* Adds some padding inside the button */
-    text-align: center; /* Ensures the text is centered */
-    text-decoration: none; /* Removes any underlines from text */
-    display: inline-block; /* Allows the button to sit inline with other elements */
-    font-size: 16px; /* Sets a standard font size */
-    margin: 4px 2px; /* Adds some space around the button */
-    cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
-    border-radius: 8px; /* Rounds the corners of the button */
-    box-shadow: 0 4px #8b0000; /* Adds a darker red shadow to give a depth effect */
-    transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
-    width: 10vw;
-  }
-  .loginButton {
-    background-color: #e67e22; /* A dark red color for the primary button background #21c51b*/
-    color: white; /* White text to stand out against the dark red */
-    border: none; /* Removes the default border */
-    padding: 10px 20px; /* Adds some padding inside the button */
-    text-align: center; /* Ensures the text is centered */
-    text-decoration: none; /* Removes any underlines from text */
-    display: inline-block; /* Allows the button to sit inline with other elements */
-    font-size: 16px; /* Sets a standard font size */
-    margin: 4px 2px; /* Adds some space around the button */
-    cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
-    border-radius: 8px; /* Rounds the corners of the button */
-    box-shadow: 0 4px #d35400; /* Adds a darker red shadow to give a depth effect #079202*/
-    transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
-    width: 10vw;
-  }
-  .containerBody {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1A202C; /* Dark background for contrast */
-    color: #ffffff; /* White text */
-  }
-  
-  .accountGreeting {
-    font-size: 2rem; /* Large font size for the greeting */
-    margin-bottom: 20px; /* Space above the buttons */
-    text-align: center; /* Center the greeting text */
-  }
-  
-  .buttonContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for buttons */
-    grid-gap: 20px; /* Space between buttons */
-    padding: 20px;
-    max-width: 600px; /* Maximum width of the container */
-  }
-  
-  .bigSquareButton {
-    background-color: #4A5568; /* A lighter shade for buttons */
-    color: white;
-    border: none;
-    padding: 20px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
-    height: 150px; /* Fixed height for square appearance */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .bigSquareButton:hover {
-    background-color: #2D3748; /* Slightly lighter on hover */
-  }
-  
-  @media screen and (max-width: 768px) {
-    .main {
-      width: 100vw; /* Full width for smaller screens */
-    }
-  
-    .main::before {
-      width: 100vw; /* Ensure background covers full width */
-    }
-  
-    .containerBody {
-      flex-direction: column; /* Stack elements vertically */
-      padding: 20px; /* Add some padding for spacing */
-    }
-  
-    .registrationContainer {
-      width: 90vw; /* Increase width for better use of space */
-      padding: 15px; /* Adjust padding for smaller screens */
-    }
-  
-    .registrationForm {
-      gap: 15px; /* Reduce gap size */
-    }
-  
-    .formGroup label {
-      font-size: 16px; /* Adjust font size for readability */
-    }
-  
-    .formGroup input {
-      font-size: 16px; /* Adjust font size for readability */
-      padding: 10px; /* Adjust padding for better touch interaction */
-    }
-  
-    .customButtons {
-      flex-direction: column; /* Stack buttons vertically */
-      gap: 10px; /* Add space between buttons */
-    }
-  
-    .submitButton, .downloadButton {
-      width: 100%; /* Full-width buttons for easier interaction */
-      padding: 12px 15px; /* Adjust padding */
-      font-size: 16px; /* Adjust font size for readability */
-      margin: 8px 0; /* Adjust margin for spacing */
-    }
-    .buttonContainer {
-      grid-template-columns: 1fr; /* Stack buttons on smaller screens */
-      max-width: 300px; /* Adjust max width for smaller screens */
-    }
-  
-    .bigSquareButton {
-      height: 120px; /* Adjust button size for smaller screens */
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .title {
-      font-size: 18px; /* Further reduce font size */
-    }
-  
-    .formGroup label {
-      font-size: 14px; /* Reduce font size for labels */
-    }
-  
-    .formGroup input {
-      font-size: 14px; /* Reduce input font size */
-      padding: 8px; /* Slightly reduce padding */
-    }
-  
-    .submitButton, .downloadButton {
-      font-size: 14px; /* Reduce font size */
-      padding: 10px 12px; /* Adjust padding */
-    }
-    .buttonContainer {
-      flex-direction: column;
-    }
-  
-    .bigSquareButton {
-      width: 120px;
-      height: 120px;
-      font-size: 16px;
-      padding: 10px 20px;
-    }
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum height of the viewport */
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #34495e;
+}
+
+.webshop-page {
+  flex: 1; /* Allows the webshop page to grow and fill the space between nav and footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100%; /* Ensures the webshop page takes the full width */
+
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2em;
+  background: #333;
+  color: white;
+  width: stretch;
+  height: 5vh;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 10vw;
+  height: 5vh;
+}
+.nav-links button {
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.6em;
+}
+.myProfile{
+  background-color: #4cae4c;
+  padding: 7px;
+  border-radius: 5px;
+}
+.dashboardBtn{
+  background-color: #e67e22;
+  padding: 7px;
+  border-radius: 5px;
+}
+.webshop-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0; /* Add padding to the top and bottom */
+}
+/* Main container for the shop */
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none; /* Removing border for a flat design */
+  background: #ffffff; /* Light background for a clean look */
+  width: 100%;
+}
+.search-container {
+  height: 10vh;
+  display: flex;
+  justify-content: center; /* Center the search input horizontally */
+  align-items: center; /* Center the search input vertically */
+  padding: 1vh 2vw; /* Add some padding around the search container */
+}
+
+.search-input {
+  width: 50vw; /* Make the search input wide */
+  height: 2vh; /* Set a fixed height */
+  padding: 1vh 2vw; /* Padding inside the search input */
+  font-size: 1.5em; /* Increase the font size for better readability */
+  border: 2px solid #ccc; /* A light grey border */
+  border-radius: 10px; /* Rounded borders for a modern look */
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transition for effects */
+}
+
+.search-input::placeholder {
+  color: #aaa; /* A light color for the placeholder text */
+}
+
+.search-input:focus {
+  border-color: #808080; /* Darker border color on focus */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Increased shadow on focus */
+}
+.containerBodyShop { /* This will make the container grow and push the footer down */
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+}
+.items-list-container {
+  flex: 3; /* Larger space for items */
+  overflow-y: auto;
+  background: #34495e; /* Slightly different background for contrast */
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 50px; /* Space between grid items */
+  color: rgb(92, 89, 89)
+}
+
+.item-card {
+  background: rgba(255, 255, 255, 0.616);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  align-items: center; /* Center align items for consistency */
+  justify-content: space-between;
+}
+
+.item-image {
+  width: 30%; /* Set image width to be 25% of the card */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Add some space below the image */
+}
+
+.item-info {
+  width: 100%; /* Info takes full width of the card */
+  margin-bottom: 10px; /* Add some space below the info section */
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-top: 1px gray solid;
+  border-bottom: 1px gray solid;
+}
+
+.item-description {
+  font-size: 0.9em; /* Adjust font size for description */
+  /* No longer need to truncate the text */
+}
+
+.item-vnum {
+  font-size: 0.8em; /* Adjust font size for vnum */
+  color: #666; /* Lighter text for the vnum */
+  margin-bottom: 10px; /* Add some space below the vnum */
+}
+
+.item-footer {
+  width: 100%; /* Footer takes full width of the card */
+  display: flex;
+  justify-content: space-between; /* Space out the input and the button */
+  align-items: center;
+}
+
+.item-quantity-input {
+  width: 50%; /* Adjust width of input */
+  /* If input still overflows, reduce the percentage */
+}
+/* Number Input Styling */
+input[type="number"] {
+  -webkit-appearance: none; /* Removes default styles in WebKit browsers */
+  -moz-appearance: textfield; /* Removes default styles in Firefox */
+  appearance: none; /* Removes default styles */
+  margin: 0; /* Removes default margin */
+  width: 100%; /* Full width - Use with a container to limit width */
+  height: 20px; /* Fixed height */
+  border: 1px solid #ccc; /* Default border */
+  padding: 8px 12px; /* Some padding */
+  border-radius: 4px; /* Rounded borders */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for some depth */
+  font-size: 16px; /* Font size */
+  line-height: 1.25; /* Line height */
+  color: #333; /* Text color */
+  background-color: #fff; /* Background color */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for focus */
+}
+
+input[type="number"]:focus {
+  border-color: #4A90E2; /* Highlight color on focus */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Glow effect on focus */
+  outline: none; /* Remove the default outline */
+}
+
+/* To hide the increment and decrement buttons in WebKit browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Removes default controls */
+  margin: 0; /* Removes default margin */
+}
+
+/* Adjustments for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* If your inputs are inside a specific container, e.g., .formGroup, you can scope the styling */
+.formGroup input[type="number"] {
+  /* Styling specific to your container */
+  /* Reuse styles from above or add custom ones */
+}
+.buy-button {
+  padding: 8px 16px;
+  background-color: #5cb85c; /* A fresh green color for the buy button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 40px;
+}
+
+.buy-button:hover {
+  background-color: #4cae4c; /* Darker shade on hover */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
+  color: #f3e9d2;
+  z-index: 1;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://i.imgur.com/O1VXW3z.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1; /* Places the background behind the content */
+  width: 50vw;
+}
+
+.containerBodyDash{
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+  align-items: center;
+  height: 100vh;
+}
+.accountGreeting{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+.registrationContainer {
+  height: 55vh;
+  padding: 30px;
+  width: 35vw; /* Slightly narrower for a more elegant look */
+}
+
+.registrationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for a less cluttered look */
+  height: 80%;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #ffffff;
+  font-size: 18px; /* Slightly larger for better visibility */
+}
+
+.formGroup input {
+  padding: 12px; /* Increased padding for a more tactile feel */
+  background-color: #ffffffb0;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 18px; /* Larger font size for modern aesthetics */
+}
+.customButtons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.submitButton {
+  background-color: #21c51b; /* A dark red color for the primary button background #e67e22*/
+  color: white; /* White text to stand out against the dark red */
+  border: none; /* Removes the default border */
+  padding: 10px 20px; /* Adds some padding inside the button */
+  text-align: center; /* Ensures the text is centered */
+  text-decoration: none; /* Removes any underlines from text */
+  display: inline-block; /* Allows the button to sit inline with other elements */
+  font-size: 16px; /* Sets a standard font size */
+  margin: 4px 2px; /* Adds some space around the button */
+  cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
+  border-radius: 8px; /* Rounds the corners of the button */
+  box-shadow: 0 4px #079202; /* Adds a darker red shadow to give a depth effect #d35400*/
+  transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
+  width: 10vw;
+}
+.downloadButton{
+  background-color: #a52a2a; /* A dark red color for the primary button background */
+  color: white; /* White text to stand out against the dark red */
+  border: none; /* Removes the default border */
+  padding: 10px 20px; /* Adds some padding inside the button */
+  text-align: center; /* Ensures the text is centered */
+  text-decoration: none; /* Removes any underlines from text */
+  display: inline-block; /* Allows the button to sit inline with other elements */
+  font-size: 16px; /* Sets a standard font size */
+  margin: 4px 2px; /* Adds some space around the button */
+  cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
+  border-radius: 8px; /* Rounds the corners of the button */
+  box-shadow: 0 4px #8b0000; /* Adds a darker red shadow to give a depth effect */
+  transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
+  width: 10vw;
+}
+.loginButton {
+  background-color: #e67e22; /* A dark red color for the primary button background #21c51b*/
+  color: white; /* White text to stand out against the dark red */
+  border: none; /* Removes the default border */
+  padding: 10px 20px; /* Adds some padding inside the button */
+  text-align: center; /* Ensures the text is centered */
+  text-decoration: none; /* Removes any underlines from text */
+  display: inline-block; /* Allows the button to sit inline with other elements */
+  font-size: 16px; /* Sets a standard font size */
+  margin: 4px 2px; /* Adds some space around the button */
+  cursor: pointer; /* Changes the mouse cursor to indicate it's clickable */
+  border-radius: 8px; /* Rounds the corners of the button */
+  box-shadow: 0 4px #d35400; /* Adds a darker red shadow to give a depth effect #079202*/
+  transition: all 0.3s ease 0s; /* Smooth transition for hover effects */
+  width: 10vw;
+}
+.containerBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1A202C; /* Dark background for contrast */
+  color: #ffffff; /* White text */
+}
+
+
+.buttonContainer {
+  margin-top: 10vh;
+  display: flex;
+  padding: 20px;
+  max-width: 600px; /* Maximum width of the container */
+}
+
+.bigSquareButton {
+  background-color: #4A5568; /* A lighter shade for buttons */
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  height: 200px; /* Fixed height for square appearance */
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.bigSquareButton:hover {
+  background-color: #2D3748; /* Slightly lighter on hover */
+}
+/* Styling for Logout Button */
+.logoutButton {
+  background-color: #d9534f; /* Red color for logout */
+  padding: 7px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hover effect for Logout Button */
+.logoutButton:hover {
+  background-color: #c9302c;
+}
+
+/* Adjustments to Top Nav */
+.top-nav {
+  /* existing styles */
+  padding: 10px 50px; /* Adjust padding for better spacing */
+}

@@ -1,11 +1,14 @@
 'use client'
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/router'; // Import useRouter from Next.js
 import { toast } from 'react-toastify';
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter(); // Initialize the router
+
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -40,6 +43,7 @@ export default function LoginForm() {
         setUsername('');
         setPassword('');
         toast.success('Login successful!'); // Show success message
+        router.push('/dashboard'); // Redirect to dashboard using router.push
         // Perform further actions here upon successful login, like redirecting the user
       } else {
         toast.error(data.message); // Show error message from the server

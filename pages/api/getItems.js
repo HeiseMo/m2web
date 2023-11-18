@@ -31,10 +31,14 @@ export default async function handler(req, res) {
           /*3,16,18,21,28*/
           const [rows] = await db.execute(`
           SELECT 
-            vnum, 
-            CONVERT(locale_name USING utf8) as readable_locale_name 
-          FROM player.item_proto 
-          WHERE gold = 0 AND type IN (3, 16, 18, 21, 28);
+          vnum, 
+          CONVERT(locale_name USING utf8) as readable_locale_name 
+        FROM 
+          player.item_proto 
+        WHERE 
+          gold = 0 
+          AND type IN (3, 16, 18, 21, 28) 
+          AND vnum != 50050;
         `);
         await db.end();
         const itemsWithImages = rows.map(item => {

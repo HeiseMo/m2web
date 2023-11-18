@@ -104,7 +104,9 @@ const Shop = ({ user }) => {
   const handleShopClick = () => {
     router.push('/dashboard');
   }
-
+  if (!accountName) {
+    return <div className="empty-state">No account data available.</div>;
+  }
   return (
     <div className="webshop-page">
 <ToastContainer />

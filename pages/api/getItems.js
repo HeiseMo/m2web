@@ -39,6 +39,10 @@ export default async function handler(req, res) {
           gold = 0 
           AND type IN (3, 16, 18, 21, 28) 
           AND vnum != 50050;
+          AND vnum != 50051;
+          AND vnum != 50052;
+          AND vnum != 50053;
+          AND vnum != 50061;
         `);
         await db.end();
         const itemsWithImages = rows.map(item => {

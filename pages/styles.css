@@ -12,10 +12,10 @@ body {
   flex: 1; /* Allows the webshop page to grow and fill the space between nav and footer */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
-  width: 100%; /* Ensures the webshop page takes the full width */
+  width: 100vw; /* Ensures the webshop page takes the full width */
 
 }
 
@@ -105,8 +105,27 @@ body {
   display: flex;
   flex-direction: column; /* Stack children vertically */
   width: 90%;
+  height: 75vh;
   justify-content: space-between;
   align-items: center;
+}
+/* Styling the scrollbar for .containerBodyShop */
+.items-list-container::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+.items-list-container::-webkit-scrollbar-track {
+  background: rgba(79, 111, 143, 0.357); /* Color of the scrollbar track */
+  border-radius: 10px; /* Optional: add roundness to the track */
+}
+
+.items-list-container::-webkit-scrollbar-thumb {
+  background: #B1B9C1; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Optional: add roundness to the thumb */
+}
+
+.items-list-container::-webkit-scrollbar-thumb:hover {
+  background: #B1B9C1; /* Color of the scrollbar thumb on hover */
 }
 .items-list-container {
   flex: 3; /* Larger space for items */
@@ -116,7 +135,8 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 50px; /* Space between grid items */
-  color: rgb(92, 89, 89)
+  color: rgb(92, 89, 89);
+  
 }
 
 .item-card {
@@ -128,6 +148,7 @@ body {
   padding: 25px;
   align-items: center; /* Center align items for consistency */
   justify-content: space-between;
+  height: 30vh;
 }
 
 .item-image {
@@ -418,12 +439,18 @@ input[type="number"] {
 .webshop-page {
   flex-grow: 1;
 }
-
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Or the height of the container where the loader is placed */
+}
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .top-nav {
     font-size: 1.2em; /* Smaller font size */
     padding: 10px 15px; /* Adjust padding */
+    width: 100%; /* Ensure full width */
   }
 
   .nav-links {
@@ -451,22 +478,37 @@ input[type="number"] {
   }
 
   .items-list-container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for items */
+    display: flex; /* Use flex for better control */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items horizontally */
     gap: 20px; /* Adjust gap */
+    padding: 5px; /* Adjust padding */
+    overflow-x: hidden; /* Hide horizontal overflow */
   }
 
   .item-card {
     padding: 15px; /* Adjust padding */
+    height: auto; /* Adjust height */
+    justify-content: space-between;
+    font-size: 0.8em;
+    width: 45%; /* Adjust width to fit two items per row */
   }
 
   .item-info {
     border-top: none; /* Optional: Remove borders */
     border-bottom: none; /* Optional: Remove borders */
+    height: auto; /* Adjust height */
+  }
+
+  .item-image {
+    width: 30%; /* Full width */
+    height: auto; /* Adjust height */
   }
 
   .item-footer {
     flex-direction: column; /* Stack input and button */
     gap: 10px; /* Add space between input and button */
+    height: auto; /* Adjust height */
   }
 
   .item-quantity-input,
@@ -478,24 +520,31 @@ input[type="number"] {
     flex-direction: column; /* Stack buttons vertically */
     align-items: center; /* Center buttons */
     gap: 15px; /* Space between buttons */
+    width: 100%; /* Ensure full width */
   }
 
   .bigSquareButton {
     width: 90vw; /* Adjust button width */
-    height: 120px; /* Adjust button height */
+    height: auto; /* Adjust button height */
     font-size: 1.2rem; /* Adjust font size */
   }
 
   .webshop-footer {
-    font-size: 0.8em; /* Adjust footer font size */
+    width: 100vw; /* Full viewport width */
+    padding: 0; /* Adjust padding if needed */
+    margin: 0; /* Reset margin to ensure it starts from the very edge of the screen */
+    overflow: hidden; /* Prevents horizontal scrolling caused by child elements */
+    /* Other styles */
+    display: none;
   }
-  .registrationContainer, .loginContainer { /* Assuming you have similar classes for login */
+
+  .registrationContainer, .loginContainer {
     width: 80vw; /* Use a higher percentage of the viewport width */
     padding: 20px; /* Adjust padding */
     margin-top: 20px; /* Add some margin at the top */
   }
 
-  .registrationForm, .loginForm { /* Assuming you have similar classes for login */
+  .registrationForm, .loginForm {
     gap: 15px; /* Adjust space between form elements */
   }
 
@@ -523,15 +572,19 @@ input[type="number"] {
     width: 90%; /* Adjust width */
     padding: 10px; /* Adjust padding */
   }
-  .containerBody{
+
+  .containerBody {
     flex-direction: column;
     height: fit-content;
   }
-  .main::before{
+
+  .main::before {
     background-image: none;
   }
-  .main{
+
+  .main {
     height: fit-content;
   }
+
   /* ... Additional responsive styles as needed ... */
 }

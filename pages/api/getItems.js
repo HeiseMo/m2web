@@ -49,7 +49,10 @@ export default async function handler(req, res) {
               imageUrl
             };
           }
-          return null;
+          return {
+            ...item,
+            imageUrl
+          };
         });
       const filteredItems = itemsWithImages.filter(item => item !== null);
         await db.end();

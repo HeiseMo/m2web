@@ -5,6 +5,7 @@ import './styles.css'; // Ensure this CSS file contains the styles provided belo
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Puff, Bars} from 'react-loader-spinner';
 
 
 
@@ -13,6 +14,7 @@ const Shop = ({ user }) => {
   const [search, setSearch] = useState(''); // New state for search input
   const [accountName, setAccountName] = useState('');
   const [isAuthChecked, setIsAuthChecked] = useState(false); // New state to track authentication check
+  const [isLoading, setIsLoading] = useState(true); // State to track loading of items
   const router = useRouter();
 
   const handleBuyItem = async (item, quantity) => {
@@ -47,6 +49,7 @@ const Shop = ({ user }) => {
 
   useEffect(() => {
     const fetchItemsData = async () => {
+      setIsLoading(true); // Start loading
       try {
         const itemsResponse = await fetch('/api/getItems');
         const itemsData = await itemsResponse.json();
@@ -65,8 +68,11 @@ const Shop = ({ user }) => {
           ...item,
           description: descMap[item.vnum] || 'No description available'
         }));
-  
+        setTimeout(() => {
+          setIsLoading(false); // End loading after a delay make sure all data is loaded
+        }, 2000); // 
         setItems(mergedData);
+
       } catch (error) {
         console.error('Error fetching data:', error);
         // Handle error appropriately
@@ -104,9 +110,26 @@ const Shop = ({ user }) => {
   const handleShopClick = () => {
     router.push('/dashboard');
   }
-  if (!accountName) {
-    return <div className="empty-state">No account data available.</div>;
-  }
+  if (!accountName) {/*
+    setTimeout(() => {
+      setIsLoading(false); // End loading after a delay make sure all data is loaded
+    }, 2000); // 
+    return (
+      <>
+            <div className="loader-container">
+            <Puff
+  height="150"
+  width="150"
+  radius={1}
+  color="#4fa94d"
+  ariaLabel="puff-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+/>
+      </div></>
+    );
+    */}
   return (
     <div className="webshop-page">
 <ToastContainer />
@@ -129,6 +152,20 @@ const Shop = ({ user }) => {
           className="search-input"
         />
       </div>
+      {isLoading ? (
+        <div className="loader-container">
+          <Bars
+            height="150"
+            width="150"
+            radius={1}
+            color="#4fa94d"
+            ariaLabel="bars-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      ) : (
     <div className='containerBodyShop'>
       
 <div className="items-list-container">
@@ -159,6 +196,7 @@ const Shop = ({ user }) => {
       ))}
 </div>
 </div>
+)}
 <footer className="webshop-footer">
         <p>© 2023 Davos2 No Cash WebShop. All rights reserved.</p>
       </footer>

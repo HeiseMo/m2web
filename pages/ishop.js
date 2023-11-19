@@ -197,9 +197,7 @@ const Shop = ({ user }) => {
 </div>
 </div>
 )}
-<footer className="webshop-footer">
-        <p>© 2023 Davos2 No Cash WebShop. All rights reserved.</p>
-      </footer>
+
       
   </div>
 

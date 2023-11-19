@@ -45,7 +45,7 @@ export default function Home({ token }) {
           </button>
         </div>
       </main>
-      <div>
+      <div className='formContainer'>
         {showLoginForm ? <LoginForm /> : <RegistrationForm />}
       </div>
       <ToastContainer />

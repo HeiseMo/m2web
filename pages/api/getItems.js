@@ -36,8 +36,7 @@ export default async function handler(req, res) {
         FROM 
           player.item_proto 
         WHERE 
-          gold = 0 
-          AND type IN (3, 16, 18, 21, 28) 
+          type IN (3, 5, 16, 18, 21, 28) 
           AND vnum != 50050;
         `);
         await db.end();

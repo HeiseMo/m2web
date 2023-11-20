@@ -26,8 +26,12 @@ const PlayersList = () => {
     <div key={player.id} className="player-item">
       <div className="player-detail"><span className="label">Name:</span> {player.name}</div>
       <div className="player-detail"><span className="label">Level:</span> {player.level}</div>
-      <div className="player-detail"><span className="label">EXP:</span> {player.exp}</div>
-      <div className="player-detail"><span className="label">Gold:</span> {player.gold}</div>
+      <div className="player-detail">
+        <span className="label">EXP:</span> {new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(player.exp)}
+      </div>
+      <div className="player-detail">
+        <span className="label">Gold:</span> {new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(player.gold)}
+      </div>
     </div>
   ))}
 </div>

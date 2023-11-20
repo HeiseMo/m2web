@@ -536,21 +536,22 @@ input[type="number"] {
   color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft box-shadow for depth */
-  max-width: 600px; /* Maximum width of the container */
+  width: 30vw; /* Maximum width of the container */
   margin: 20px auto; /* Centering the container */
 }
 
 /* Individual Player Styles */
 .player-item {
-  background-color: #2e2e2e; /* Slightly lighter background for contrast */
+  background-color: #2e2e2e;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each item */
-  display: flex;
-  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   align-items: center;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .player-item:hover {
@@ -562,8 +563,8 @@ input[type="number"] {
   padding: 5px 10px;
   font-size: 16px;
   font-weight: bold;
-  color: #a2a2a2; /* Lighter text for readability */
-  text-align: center;
+  color: #a2a2a2;
+  text-align: left;
 }
 .player-detail {
   padding: 5px 10px;

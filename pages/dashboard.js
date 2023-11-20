@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import "./styles.css";
+import WebshopList from '../components/webshopList';
+import PlayerList from '../components/PlayerList';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -66,7 +68,10 @@ const Dashboard = () => {
         <button className="bigSquareButton" onClick={handleShopClick}>
           Shop
         </button>
-
+      </div>
+      <div className='dashboardBody'>
+      <WebshopList />
+      <PlayerList />
       </div>
       <ToastContainer />
     </div>

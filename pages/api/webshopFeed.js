@@ -17,19 +17,7 @@ function imageExists(imagePath) {
     return false;
   }
 }
-function getAllItemsWithoutImages(items) {
-  // Path to the public directory
-  const publicDirectory = path.join(process.cwd(), 'public');
-  
-  // Filter out items that do not have an associated image
-  const itemsWithoutImages = items.filter(item => {
-    const imagePath = `/icons/${item.vnum.toString().padStart(5, '0')}.png`;
-    const fullPath = path.join(publicDirectory, imagePath);
-    return !fs.existsSync(fullPath);
-  });
 
-  return itemsWithoutImages;
-}
 export default async function handler(req, res) {
 
     if (req.method === 'GET') {
@@ -43,22 +31,31 @@ export default async function handler(req, res) {
           /*3,16,18,21,28*/
           const [rows] = await db.execute(`
           SELECT 
-          vnum, 
-          CONVERT(locale_name USING utf8) as readable_locale_name 
-        FROM 
-          player.item_proto 
-        WHERE 
-          type IN (3, 5, 16, 18, 21, 28) 
-          AND vnum != 50050;
+          a.id,
+          a.vnum, 
+          a.login, 
+          COUNT(a.vnum) as count, 
+          p.type, 
+          p.readable_locale_name
+      FROM 
+          player.item_award a
+      JOIN 
+          (SELECT 
+              vnum, 
+              type, 
+              CONVERT(locale_name USING utf8) as readable_locale_name 
+           FROM 
+              player.item_proto 
+           WHERE 
+              type IN (3, 5, 16, 18, 21, 28) 
+              AND vnum != 50050
+          ) p ON a.vnum = p.vnum
+      GROUP BY 
+          a.id, a.vnum, a.login, p.type, p.readable_locale_name
+      ORDER BY 
+          a.id DESC;      
         `);
         await db.end();
-        const items = [
-          /* ... your items with a vnum property ... */
-        ];
-        
-        // Get all items without images
-        const itemsWithoutImages = getAllItemsWithoutImages(items);
-        console.log(itemsWithoutImages);
         const itemsWithImages = rows.map(item => {
           let imageUrl = `/icons/${item.vnum.toString().padStart(5, '0')}.png`;
           if (imageExists(imageUrl)) {

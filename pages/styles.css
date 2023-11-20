@@ -413,17 +413,198 @@ input[type="number"] {
   /* existing styles */
   padding: 10px 50px; /* Adjust padding for better spacing */
 }
-
+.dashboardBody{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width: 80vw;
+}
 /* Added to ensure .webshop-page grows to fill available space */
 .webshop-page {
   flex-grow: 1;
 }
 
+
+.webshop-list {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: auto; /* Center the list in the middle of the page */
+  padding: 1vw; /* Add some padding around */
+  list-style: none;
+  background-color: #0A3A62; /* Dark blue background */
+  height: 50vh;
+  overflow-y: auto; /* Use 'auto' instead of 'scroll' to hide scrollbar when not needed */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add some shadow for depth */
+  border-radius: 10px; /* Round the corners */
+}
+
+.webshop-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Evenly distribute space */
+  border-bottom: 1px solid #0D47A1; /* Slightly lighter blue for the border */
+  color: #ffffff; /* White text for readability */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  padding: 1vh 1vw;
+  gap: 1vw; /* Add a gap between items */
+}
+
+.webshop-item:hover {
+  background-color: #0D47A1; /* Highlight item on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2); /* Shadow effect on lift */
+}
+
+.webshop-item-image {
+  flex-shrink: 0;
+  display: flex; /* Center the image within the div */
+  justify-content: center;
+  align-items: center;
+  width: 4vw; /* Adjusted width */
+}
+
+.webshop-item-image img {
+  width: 100%; /* Make the image responsive within its container */
+  max-width: 30px; /* Maximum size */
+  max-height: 30px;
+  border-radius: 50%; /* Circular images */
+  border: 2px solid #ffffff; /* White border for the images */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.webshop-item-details {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr; /* Allocate space for each detail type, 'fr' is a fractional unit */
+  width: 100%; /* Take up the rest of the item width */
+  align-items: center;
+  gap: 1vw; /* Maintain a gap between grid items */
+}
+
+.webshop-item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.1rem;
+  font-weight: 600; /* Slightly bolder for item name */
+  color: #AEC6FF; /* Lighter color for emphasis */
+}
+
+.webshop-item-count,
+.webshop-item-login,
+.webshop-item-vnum {
+  font-size: 0.9rem;
+  text-align: center; /* Ensure text is always centered */
+}
+/* Styling the scrollbar track */
+.webshop-list::-webkit-scrollbar-track {
+  background: #bac8d37c; /* Same as the container background for a seamless look */
+  border-radius: 10px; /* Consistent with container border radius */
+}
+
+/* Styling the scrollbar handle */
+.webshop-list::-webkit-scrollbar-thumb {
+  background-color: #123A73; /* A color slightly lighter than the track for contrast */
+  border-radius: 10px; /* Rounded corners for the handle */
+  border: 3px solid #0A3A62; /* Matching the track color to create padding effect */
+}
+
+/* Styling the scrollbar itself (width and background) */
+.webshop-list::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* For Firefox */
+.webshop-list {
+  scrollbar-width: thin; /* 'auto' or 'thin' */
+  scrollbar-color: #123A73 #0A3A62; /* thumb and track colors */
+}
+
+/* Optional: Styling the scrollbar corner */
+.webshop-list::-webkit-scrollbar-corner {
+  background: #0A3A62;
+}
+/* Container Styles */
+.player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  height: 50vh;
+  background-color: #1e1e1e; /* Dark background for modern look */
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft box-shadow for depth */
+  max-width: 600px; /* Maximum width of the container */
+  margin: 20px auto; /* Centering the container */
+}
+
+/* Individual Player Styles */
+.player-item {
+  background-color: #2e2e2e; /* Slightly lighter background for contrast */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each item */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.player-item:hover {
+  transform: scale(1.03); /* Slight scale on hover for interactive effect */
+}
+
+/* Style for player details */
+.player-detail {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #a2a2a2; /* Lighter text for readability */
+  text-align: center;
+}
+.player-detail {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #a2a2a2; /* Lighter text for readability */
+  text-align: left; /* Align text to the left */
+}
+
+/* Style for labels */
+.label {
+  color: #e2e2e2; /* Slightly brighter color for labels */
+  margin-right: 5px; /* Space between label and value */
+  font-weight: normal; /* Less emphasis on the label */
+}
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   body{
     margin: 0;
     padding: 0;
+  }
+  .player-container {
+    width: 90%; /* More width on smaller screens */
+  }
+
+  .player-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .webshop-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .webshop-item-image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .webshop-item-details {
+    align-items: flex-start;
   }
   .top-nav {
     font-size: 1.2em; /* Smaller font size */

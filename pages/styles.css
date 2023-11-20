@@ -258,7 +258,7 @@ input[type="number"] {
   flex-direction: column;
   background-color: #111827;
   align-items: center;
-  height: 100vh;
+  height: auto;
 }
 .accountGreeting{
   display: flex;
